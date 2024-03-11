@@ -1,5 +1,8 @@
 -- Drop the table if it exists
-DROP TABLE IF EXISTS game_store;
+DROP TABLE IF EXISTS games;
+DROP TABLE IF EXISTS action_figure;
+DROP TABLE IF EXISTS poster;
+DROP TABLE IF EXISTS employee;
 
 -- Create Games Table
 CREATE TABLE games (
@@ -30,3 +33,10 @@ CREATE TABLE employee (
     salary DECIMAL(8, 2)
 );
 
+\COPY games FROM '/home/neka/projects/gamestore/data/game.csv' WITH CSV HEADER;
+\COPY action_figure FROM '/home/neka/projects/gamestore/data/action_figure.csv' WITH CSV HEADER;
+\COPY poster FROM '/home/neka/projects/gamestore/data/poster.csv' WITH CSV HEADER;
+\COPY employee FROM '/home/neka/projects/gamestore/data/employee.csv' WITH CSV HEADER;
+
+-- run the following command starting at the backslash and i in your DB
+--\i /home/neka/projects/gamestore/game_store.sql
