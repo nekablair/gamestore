@@ -41,7 +41,7 @@ CREATE TABLE employee (
         CHECK (employee_name ~ '^[A-Z][A-Za-z ]+$'),
     position VARCHAR(100) 
         NOT NULL 
-        CHECK IN ('Sales Associate', 'Store Manager', 'Inventory Clerk', 'Customer Service Representative', 'IT Specialist', 'Marketing Coordinator', 'Assistant Manager', 'Finance Analyst', 'Security Officer', 'HR Coordinator'),
+        CHECK ( position IN ('Sales Associate', 'Store Manager', 'Inventory Clerk', 'Customer Service Representative', 'IT Specialist', 'Marketing Coordinator', 'Assistant Manager', 'Finance Analyst', 'Security Officer', 'HR Coordinator')),
     salary DECIMAL(7, 2) CHECK (salary > 31000 AND salary <= 65000)
 );
 --DID CALCULATIONS BY MULTIPLYING DOLLARS PER HR BY 40/HRS PER WEEK
